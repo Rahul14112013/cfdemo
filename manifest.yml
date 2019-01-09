@@ -2,9 +2,9 @@
 applications:
 - name: HelloBootDemo
   path: target/gs-sts-cloud-foundry-deployment-0.1.0.jar
-instances: 1
-memory: 1G
-env:
+  instances: 1
+  memory: 1G
+  env:
     JAVA_OPTS: -Djava.security.egd=file:///dev/urandom
 
 
