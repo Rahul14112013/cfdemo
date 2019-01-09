@@ -21,19 +21,39 @@ pipeline {
                 }
             }
         }
-        stage('Deploy') {
+        stage('Deploy - AWS') {
             steps {
-                echo 'Deploying'
+                echo 'Deploying to AWS'
                 pushToCloudFoundry(
-                target: 'api.run.pivotal.io',
-                organization: 'Channel',
-                cloudSpace: 'cdevarenne',
-                credentialsId: 'cc552891-a30a-4a98-bb1f-1ea2137bad04',
+                target: 'api.sys.pcf-demo.acarrigandemo.com',
+                organization: 'Demo',
+                cloudSpace: 'production',
+                credentialsId: 'bbdeb748-1fea-4787-9ee0-033a83f5cab5',
                 manifestChoice: [
-                  appName: 'HelloBootDemo',
+                  appName: 'cfdemo',
                   appPath: 'target/gs-sts-cloud-foundry-deployment-0.1.0.jar',
                   instances: '1', 
                   memory: '1024',
+                  selfSigned: 'true',
+                  value: 'jenkinsConfig'
+                ]
+                )
+            }
+        }
+        stage('Deploy - Azure') {
+            steps {
+                echo 'Deploying to Azure'
+                pushToCloudFoundry(
+                target: 'api.sys.west.azure.pcfninja.com',
+                organization: 'Demo',
+                cloudSpace: 'production',
+                credentialsId: 'bd3443b3-9405-4584-9769-7eb9050fb244',
+                manifestChoice: [
+                  appName: 'cfdemo',
+                  appPath: 'target/gs-sts-cloud-foundry-deployment-0.1.0.jar',
+                  instances: '1', 
+                  memory: '1024',
+                  selfSigned: 'true',
                   value: 'jenkinsConfig'
                 ]
                 )
