@@ -1,2 +1,2 @@
 # cfdemo
-Small code projects to demonstrate Cloud Foundry capabilties (PAS)
+Simple  project to demonstrate Cloud Foundry capabilties (PAS)
