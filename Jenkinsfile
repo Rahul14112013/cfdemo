@@ -29,12 +29,12 @@ pipeline {
                 organization: 'Demo',
                 cloudSpace: 'production',
                 credentialsId: 'bbdeb748-1fea-4787-9ee0-033a83f5cab5',
+                selfSigned: 'true',
                 manifestChoice: [
                   appName: 'cfdemo',
                   appPath: 'target/gs-sts-cloud-foundry-deployment-0.1.0.jar',
                   instances: '1', 
-                  memory: '1024',
-                  selfSigned: 'true',
+                  memory: '1024',   
                   value: 'jenkinsConfig'
                 ]
                 )
@@ -48,12 +48,12 @@ pipeline {
                 organization: 'Demo',
                 cloudSpace: 'production',
                 credentialsId: 'bd3443b3-9405-4584-9769-7eb9050fb244',
+                selfSigned: 'true',
                 manifestChoice: [
                   appName: 'cfdemo',
                   appPath: 'target/gs-sts-cloud-foundry-deployment-0.1.0.jar',
                   instances: '1', 
                   memory: '1024',
-                  selfSigned: 'true',
                   value: 'jenkinsConfig'
                 ]
                 )
