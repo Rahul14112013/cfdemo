@@ -1,10 +1,10 @@
 ---
+applications:
+- name: HelloBootDemo
+  path: target/gs-sts-cloud-foundry-deployment-0.1.0.jar
 instances: 1
 memory: 1G
 env:
     JAVA_OPTS: -Djava.security.egd=file:///dev/urandom
     JBP_CONFIG_OPEN_JDK_JRE: '[memory_calculator: { memory_sizes: { metaspace: 100m, stack: 256k }}]'
 
-applications:
-- name: HelloBootDemo
-  path: target/demo-0.0.1-SNAPSHOT.jar
